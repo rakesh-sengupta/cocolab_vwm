@@ -1,0 +1,31 @@
+# Pre-commit hooks: run automatically before every git commit.
+#
+# Install once:
+#     pip install pre-commit
+#     pre-commit install
+#
+# After install, every `git commit` runs these checks. To bypass (rarely
+# needed): `git commit --no-verify`.
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.12
+    hooks:
+      # Lint: catches the kinds of issues fixed in the v0.1 commit
+      # (unsorted imports, deprecated typing.Tuple, ambiguous variable names).
+      - id: ruff
+        args: [--fix]
+      # Format: applied separately so format-only changes land in their own
+      # commits rather than mixing with logic changes.
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=500]
+      - id: check-merge-conflict

@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual envs
+venv/
+env/
+.venv/
+.env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.hypothesis/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Simulation outputs (committed selectively under results/published/)
+results/scratch/
+results/*.png
+results/*.pdf
+*.npz
+*.h5
+*.pkl
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Sphinx
+docs/_build/
+
+# Local config
+.env
+.envrc
